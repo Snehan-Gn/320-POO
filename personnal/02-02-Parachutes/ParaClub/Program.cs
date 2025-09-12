@@ -80,6 +80,8 @@ class Plane
         {
             para.Update();
         }
+
+        parachutists.RemoveAll(p => p.y > Config.SCREEN_HEIGHT - 6);
     }
 }
 
@@ -120,7 +122,7 @@ class Para
 
     public void Update()
     {
-        if (y <= Config.SCREEN_HEIGHT)
+        if (y <= 30)
         { 
             y++; 
         }
