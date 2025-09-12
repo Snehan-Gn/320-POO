@@ -15,7 +15,6 @@ namespace Drones
             this.name = name;
             this.x = x;
             this.y = y;
-            
         }
 
 

@@ -1,3 +1,5 @@
+using Drones.Model;
+
 namespace Drones
 {
     internal static class Program
@@ -12,9 +14,13 @@ namespace Drones
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            // Création de la flotte de drones
-            Drone drone1 = new Drone("Joe", 100, 100);
-            List<Drone> fleet= new List<Drone> { drone1 };
+            // Création de la flotte de drones;
+            List<Drone> fleet= new List<Drone>();
+            fleet.Add(new Drone("Joe", 100, 100));
+
+            List<Building> fleet2= new List<Building>();
+            fleet2.Add(new Building(50, 50));
+
 
             // Démarrage
             Application.Run(new AirSpace(fleet));
