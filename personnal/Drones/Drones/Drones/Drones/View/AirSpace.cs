@@ -1,4 +1,4 @@
-using Drones.Model;
+using Drones;
 
 namespace Drones
 {
@@ -12,34 +12,27 @@ namespace Drones
         public static readonly int HEIGHT = 600;
 
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
-        private List<Drone> fleet;
-        private List<Building> fleet2;
+        private List<Drone> fleet = new();
+        private List<Building> fleet2 = new();
 
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
 
         // Initialisation de l'espace aérien avec un certain nombre de drones
-        public AirSpace(List<Drone> fleet)
+        public AirSpace(List<Drone> fleet, List<Building> fleet2)
         {
             InitializeComponent();
             // Gets a reference to the current BufferedGraphicsContext
+
+            this.fleet = fleet ?? new List<Drone>();
+            this.fleet2 = fleet2 ?? new List<Building>();
+
             currentContext = BufferedGraphicsManager.Current;
             // Creates a BufferedGraphics instance associated with this form, and with
             // dimensions the same size as the drawing surface of the form.
             airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
-            this.fleet = fleet;
         }
 
-        public AirSpace(List<Building> fleet2)
-        {
-            InitializeComponent();
-            // Gets a reference to the current BufferedGraphicsContext
-            currentContext = BufferedGraphicsManager.Current;
-            // Creates a BufferedGraphics instance associated with this form, and with
-            // dimensions the same size as the drawing surface of the form.
-            airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
-            this.fleet2 = fleet2;
-        }
 
         // Affichage de la situation actuelle
         private void Render()

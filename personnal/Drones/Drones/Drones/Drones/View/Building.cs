@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Drones.View
+namespace Drones
 {
     public partial class Building
     {
@@ -12,7 +12,7 @@ namespace Drones.View
 
         public void Render(BufferedGraphics drawingSpace)
         {
-            drawingSpace.Graphics.DrawEllipse(buildingBrush, new Rectangle(50,50, 4, 4));
+            drawingSpace.Graphics.DrawEllipse(buildingBrush, new Rectangle(50,50, 10, 10));
         }
     }
 }

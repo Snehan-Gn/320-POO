@@ -1,4 +1,4 @@
-using Drones.Model;
+using Drones;
 
 namespace Drones
 {
@@ -23,7 +23,7 @@ namespace Drones
 
 
             // Démarrage
-            Application.Run(new AirSpace(fleet));
+            Application.Run(new AirSpace(fleet, fleet2));
         }
     }
 }
