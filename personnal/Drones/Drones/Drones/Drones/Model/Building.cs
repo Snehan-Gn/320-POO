@@ -8,9 +8,9 @@ namespace Drones
 {
     public partial class Building
     {
-        private int x;
-        private int y;
-        private int depth;
+        private int x {  get; set; }
+        private int y { get; set; }
+        public int depth;
         private int width;
         private string color;
 
@@ -18,9 +18,20 @@ namespace Drones
         {
             this.x = x;
             this.y = y;
-            this.depth = 4;
-            this.width = 4;
+            this.depth = 10;
+            this.width = 10;
             this.color = "red";
         }
     }
+
+    public partial class Factory : Building
+    {
+        private int PowerConsumption;
+
+        public Factory(int powerConsumption) : base(x,y)
+        {
+            PowerConsumption = powerConsumption;
+        }
+    }
+
 }

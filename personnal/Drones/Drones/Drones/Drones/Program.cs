@@ -18,12 +18,12 @@ namespace Drones
             List<Drone> fleet= new List<Drone>();
             fleet.Add(new Drone("Joe", 100, 100));
 
-            List<Building> fleet2= new List<Building>();
-            fleet2.Add(new Building(50, 50));
+            List<Building> buildings= new List<Building>();
+            buildings.Add(new Building(50, 50));
 
 
             // Démarrage
-            Application.Run(new AirSpace(fleet, fleet2));
+            Application.Run(new AirSpace(fleet, buildings));
         }
     }
 }

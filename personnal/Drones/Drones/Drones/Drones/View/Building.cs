@@ -8,11 +8,11 @@ namespace Drones
 {
     public partial class Building
     {
-        private Pen buildingBrush = new Pen(new SolidBrush(Color.Red), 3);
+        private Pen buildingBrush = new Pen(new SolidBrush(Color.Blue), 5);
 
         public void Render(BufferedGraphics drawingSpace)
         {
-            drawingSpace.Graphics.DrawEllipse(buildingBrush, new Rectangle(50,50, 10, 10));
+            drawingSpace.Graphics.DrawRectangle(buildingBrush, new Rectangle(50,50, depth, width));
         }
     }
 }
