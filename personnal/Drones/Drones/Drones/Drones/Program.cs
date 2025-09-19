@@ -19,7 +19,9 @@ namespace Drones
             fleet.Add(new Drone("Joe", 100, 100));
 
             List<Building> buildings= new List<Building>();
-            buildings.Add(new Building(50, 50));
+            buildings.Add(new Factory(35,100,430.40));
+            buildings.Add(new Store(250, 130, "Lundi:8h-18h"));
+
 
 
             // Démarrage

@@ -12,7 +12,7 @@ namespace Drones
 
         public void Render(BufferedGraphics drawingSpace)
         {
-            drawingSpace.Graphics.DrawRectangle(buildingBrush, new Rectangle(50,50, depth, width));
+            drawingSpace.Graphics.DrawRectangle(buildingBrush, new Rectangle(x, y, depth, width));
         }
     }
 }
