@@ -1,4 +1,5 @@
 using Drones;
+using System.Linq;
 
 namespace Drones
 {
@@ -14,9 +15,25 @@ namespace Drones
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            // Création de la flotte de drones;
-            List<Drone> fleet= new List<Drone>();
-            fleet.Add(new Drone("Joe", 100, 100));
+            try
+            {
+                
+                // Création de la flotte de drones;
+                List<Drone> fleet = new List<Drone>();
+
+                if (fleet.Count < 10)
+                {
+                    fleet.Add(new Drone("Joe", 100, 100));
+                }
+                else 
+                {
+                    Console.WriteLine("Erreur");
+                }
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex.ToString());
+            }
 
             List<Building> buildings= new List<Building>();
             buildings.Add(new Factory(35,100,430.40));
