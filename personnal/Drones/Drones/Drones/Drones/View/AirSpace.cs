@@ -27,10 +27,13 @@ namespace Drones
             this.fleet = fleet ?? new List<Drone>();
             this.buildings = buildings ?? new List<Building>();
 
-            currentContext = BufferedGraphicsManager.Current;
-            // Creates a BufferedGraphics instance associated with this form, and with
-            // dimensions the same size as the drawing surface of the form.
-            airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
+            if (fleet.Count < 10)
+            {
+                currentContext = BufferedGraphicsManager.Current;
+                // Creates a BufferedGraphics instance associated with this form, and with
+                // dimensions the same size as the drawing surface of the form.
+                airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
+            }
         }
 
 
